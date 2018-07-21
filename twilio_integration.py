@@ -2,6 +2,10 @@ from appintegration import *
 from twilio.rest import Client
 
 class Twilio(AppIntegration):
+	"""
+	All phone numbers passed in must begin with '+1' or other country
+	code.
+	"""
 
 	def __init__(self):
 		AppIntegration.__init__(self)
@@ -12,8 +16,8 @@ class Twilio(AppIntegration):
 
 	def send_text(self, d):
 		"""
-		Takes in a dictionary D with keys 'phone_number' and
-		'message' and sends a text.
+		Takes in a dictionary D with keys PHONE_NUMBER and
+		MESSAGE, whose values are both strings, and sends a text.
 		"""
 		try:
 			message = self.client.messages\
@@ -33,8 +37,8 @@ class Twilio(AppIntegration):
 
 	def make_call(self, d):
 		"""
-		Takes in a dictionary D with key 'phone_number' and 
-		calls the provided number.
+		Takes in a dictionary D with key PHONE_NUMBER, whose value
+		is a string, and calls the provided number.
 		"""
 		try:
 			call = self.client.calls.create(
