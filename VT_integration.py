@@ -15,32 +15,36 @@ class VirusTotal(AppIntegration):
 		url and wait for a report to be generated before returning 
 		the response dictionary.
 		"""
-
-		url = 'https://www.virustotal.com/vtapi/v2/url/report'
-		params = {'apikey': self.api_key, 'resource': d['resource']}
-		response = requests.get(url, params=params).json()
-		
-		if 'scans' not in response:
-			
-			url = 'https://www.virustotal.com/vtapi/v2/url/scan'
-			params = {'apikey': self.api_key, 'url': d['resource']}
-			response = requests.post(url, data=params).json()
+		try:
 
 			url = 'https://www.virustotal.com/vtapi/v2/url/report'
 			params = {'apikey': self.api_key, 'resource': d['resource']}
+			response = requests.get(url, params=params).json()
+			
+			if 'scans' not in response:
+				
+				url = 'https://www.virustotal.com/vtapi/v2/url/scan'
+				params = {'apikey': self.api_key, 'url': d['resource']}
+				response = requests.post(url, data=params).json()
 
-			start = time.time()
-			interval = 20
-			while 'scans' not in response:
-				wait = time.time() - start
-				if wait > interval:
-					response = requests.get(url, params=params).json()
-					interval = 20 + wait
-					print('iter')
-			return response
+				url = 'https://www.virustotal.com/vtapi/v2/url/report'
+				params = {'apikey': self.api_key, 'resource': d['resource']}
 
-		else:
-			return response
+				start = time.time()
+				interval = 20
+				while 'scans' not in response:
+					wait = time.time() - start
+					if wait > interval:
+						response = requests.get(url, params=params).json()
+						interval = 20 + wait
+						print('iter')
+				return response
+
+			else:
+				return response
+		except requests.exceptions.RequestException:
+			return "Request failed."
+
 
 	def get_domain_report(self, d):
 		"""
