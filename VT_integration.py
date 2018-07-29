@@ -8,8 +8,21 @@ class VirusTotal(AppIntegration):
 		AppIntegration.__init__(self)
 		self.api_key = self.secrets['virus_total']['api_key']
 
+	def get_hash_report(self, d):
+		"""
+		Takes in a dict D with key RESOURCE, which is the hash
+		of the file in question and retrieves its report if it
+		has been scanned before.
+		"""
+
+		url = 'https://www.virustotal.com/vtapi/v2/file/report'
+		params = {'apikey': self.api_key, 'resource': d['resource']}
+
+		return requests.get(url, params=params).json()
+
 	def scan_and_report(self, d):
-		"""Takes in a dict D with key RESOURCE, which is (a string) 
+		"""
+		Takes in a dict D with key RESOURCE, which is (a string) 
 		the url of the file in question and tries to retrieve that 
 		url's report. If the report does not exist, it will scan the 
 		url and wait for a report to be generated before returning 
