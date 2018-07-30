@@ -11,6 +11,18 @@ class OTX(AppIntegration):
 		self.api_key = self.secrets['otx']['api_key']
 		self.otx = OTXv2(self.api_key)
 
+
+	def get_pulse_details(self, d):
+		"""
+		Takes in a dict D with key PULSE_ID
+		and returns its details.
+		"""
+		try:
+			return self.otx.get_pulse_details(d['pulse_id'])
+		except BadRequest:
+			return 'Failed'
+
+
 	def get_pulse_indicators(self, d):
 		"""
 		Takes in a dict D with key PULSE_ID
