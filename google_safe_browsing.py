@@ -19,13 +19,13 @@ class Google_Safe_Browsing(AppIntegration):
 		threat_info = params['threatInfo']
 
 		threat_info['threatTypes'] = ['MALWARE', 'SOCIAL_ENGINEERING',
-									 'UNWANTED_SOFTWARE', 'POTENTIALLY_HARMFUL_APPLICATION']
+						'UNWANTED_SOFTWARE', 'POTENTIALLY_HARMFUL_APPLICATION']
 
 		if 'platform_types' in d:
 			threat_info['platformTypes'] = list(map(str.upper, d['platform_types']))
 		else:
 			threat_info['platformTypes'] = ['WINDOWS', 'LINUX', 'OSX', 
-											'ANDROID', 'IOS', 'CHROME']
+							'ANDROID', 'IOS', 'CHROME']
 
 		threat_info['threatEntryTypes'] = ['URL']
 
