@@ -1,0 +1,38 @@
+abuse_ipdb_check_ip:
+  id: 'AbuseIPDB Check IP'
+  description: 'AbuseIPDB returns reports created within the given number of days that it finds for the given IP Address'
+  app_integration: 'AbuseIPDB'
+  inputs:
+    ip: 'string'
+      required: True
+    days: 'string'
+      required: False
+      default: '30'
+
+abuse_ipdb_check_cidr:
+  id: 'AbuseIPDB Check CIDR'
+  description: 'AbuseIPDB returns reports created within the given number of days that it finds for the given CIDR'
+  app_integration: 'AbuseIPDB'
+  inputs:
+    cidr: 'string'
+      required: True
+    days: 'string'
+      required: False
+      default: '30'
+
+abuse_ipdb_report_ip:
+  id: 'AbuseIPDB Report IP'
+  description: 'Reports the given IP Address to AbuseIPDB'
+  app_integration: 'AbuseIPDB'
+  inputs:
+    ip: 'string'
+      required: True
+    categories: 'list'
+      required: True
+      value_type: 'int'
+      min_length: 1
+    comment: 'string'
+      required: False
+      default: ''
+
+
