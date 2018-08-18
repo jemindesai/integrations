@@ -3,9 +3,11 @@ abuse_ipdb_check_ip:
   description: 'AbuseIPDB returns reports created within the given number of days that it finds for the given IP Address'
   app_integration: 'AbuseIPDB'
   inputs:
-    ip: 'string'
+    ip:
+      type: 'string'
       required: True
-    days: 'string'
+    days: 
+      type: 'string'
       required: False
       default: '30'
 
@@ -14,9 +16,11 @@ abuse_ipdb_check_cidr:
   description: 'AbuseIPDB returns reports created within the given number of days that it finds for the given CIDR'
   app_integration: 'AbuseIPDB'
   inputs:
-    cidr: 'string'
+    cidr: 
+      type: 'string'
       required: True
-    days: 'string'
+    days: 
+      type: 'string'
       required: False
       default: '30'
 
@@ -25,14 +29,48 @@ abuse_ipdb_report_ip:
   description: 'Reports the given IP Address to AbuseIPDB'
   app_integration: 'AbuseIPDB'
   inputs:
-    ip: 'string'
+    ip: 
+      type: 'string'
       required: True
-    categories: 'list'
+    categories: 
+      type: 'list'
       required: True
       value_type: 'int'
       min_length: 1
-    comment: 'string'
+    comment: 
+      type: 'string'
       required: False
       default: ''
 
+lookup_geoip:
+  id: 'Lookup GeoIP'
+  description: 'Looks up the given IP Address and returns its geographical info.'
+  app_integration: 'GeoIP'
+  inputs:
+    ip:
+      type: 'string'
+      required: True
 
+google_safe_browsing_url_lookup:
+  id: 'Google Safe Browsing URL Lookup'
+  description: 'Looks up the given URL and returns all threat information corresponding to the URL.'
+  app_integration: 'Google Safe Browsing'
+  inputs:
+    url:
+      type: 'string'
+      required: True
+    platform_types:
+      type: 'list'
+      required: False
+      value_type: 'string'
+      min_length: 1
+      default: ['WINDOWS', 'LINUX', 'OSX', 'ANDROID', 'IOS', 'CHROME']
+
+get_otx_pulse_details:
+  id: 'Get OTX Pulse Details'
+  description: 'Gets the details of the pulse corresponding to the given pulse ID.'
+  app_integration: 'OTX'
+  inputs:
+    pulse_id: 
+      type: 'string'
+      required: True
