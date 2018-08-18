@@ -1,0 +1,7 @@
+{
+	"type": "object",
+	"required": ["pulse"],
+	"properties": {
+		"pulse": {"type": "string", "title": "Search"}
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"type": "object",
+	"required": ["name", "indicators"],
+	"properties": {
+		"name": {"type": "string", "title": "Name of Pulse"},
+		"indicators": {
+			"type": "array",
+			"title": "Indicators of Compromise",
+			"items": {
+				"type": "object",
+				"required": ["indicator", "type"],
+				"properties": {
+					"indicator": {"type": "string", "title": "Indicator"},
+					"type": {"type": "string", "title": "Indicator Type"}
+				}
+			}
+		}
+	}
+}
