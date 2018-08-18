@@ -8,56 +8,25 @@ abuse_ipdb_check_cidr:
   id: 'AbuseIPDB Check CIDR'
   description: 'AbuseIPDB returns reports created within the given number of days that it finds for the given CIDR'
   app_integration: 'AbuseIPDB'
-  inputs:
-    cidr: 
-      type: 'string'
-      required: True
-    days: 
-      type: 'string'
-      required: False
-      default: '30'
+  input_schema: 'schemas/abuse_ipdb_check_cidr.json'
 
 abuse_ipdb_report_ip:
   id: 'AbuseIPDB Report IP'
   description: 'Reports the given IP Address to AbuseIPDB'
   app_integration: 'AbuseIPDB'
-  inputs:
-    ip: 
-      type: 'string'
-      required: True
-    categories: 
-      type: 'list'
-      required: True
-      value_type: 'int'
-      min_length: 1
-    comment: 
-      type: 'string'
-      required: False
-      default: ''
+  input_schema: 'schemas/abuse_ipdb_report_ip.json'
 
 lookup_geoip:
   id: 'Lookup GeoIP'
   description: 'Looks up the given IP Address and returns its geographical info.'
   app_integration: 'GeoIP'
-  inputs:
-    ip:
-      type: 'string'
-      required: True
+  input_schema: 'schemas/lookup_geoip.json'
 
 google_safe_browsing_url_lookup:
   id: 'Google Safe Browsing URL Lookup'
   description: 'Looks up the given URL and returns all threat information corresponding to the URL.'
   app_integration: 'Google Safe Browsing'
-  inputs:
-    url:
-      type: 'string'
-      required: True
-    platform_types:
-      type: 'list'
-      required: False
-      value_type: 'string'
-      min_length: 1
-      default: ['WINDOWS', 'LINUX', 'OSX', 'ANDROID', 'IOS', 'CHROME']
+  input_schema: 'schemas/google_safe_browsing_url_lookup.json'
 
 get_otx_pulse_details:
   id: 'Get OTX Pulse Details'
