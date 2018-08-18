@@ -2,14 +2,7 @@ abuse_ipdb_check_ip:
   id: 'AbuseIPDB Check IP'
   description: 'AbuseIPDB returns reports created within the given number of days that it finds for the given IP Address'
   app_integration: 'AbuseIPDB'
-  inputs:
-    ip:
-      type: 'string'
-      required: True
-    days: 
-      type: 'string'
-      required: False
-      default: '30'
+  input_schema: 'schemas/abuse_ipdb_check_ip.json'
 
 abuse_ipdb_check_cidr:
   id: 'AbuseIPDB Check CIDR'
@@ -69,7 +62,7 @@ google_safe_browsing_url_lookup:
 get_otx_pulse_details:
   id: 'Get OTX Pulse Details'
   description: 'Gets the details of the pulse corresponding to the given pulse ID.'
-  app_integration: 'OTX'
+  app_integration: 'AlienVault OTX'
   inputs:
     pulse_id: 
       type: 'string'
@@ -78,7 +71,7 @@ get_otx_pulse_details:
 get_otx_pulse_indicators:
   id: 'Get OTX Pulse Indicators'
   description: 'Get the indicators of the pulse corresponding to the given pulse ID.'
-  app_integration: 'OTX'
+  app_integration: 'AlienVault OTX'
   inputs:
     pulse_id:
       type: 'string'
@@ -87,7 +80,7 @@ get_otx_pulse_indicators:
 get_otx_indicator_details:
   id: 'Get OTX Indicator Details'
   description: "Given an indicator type and a resource that corresponds to that type, OTX will return the indicator's details."
-  app_integration: 'OTX'
+  app_integration: 'AlienVault OTX'
   inputs:
     type:
       type: 'string'
@@ -110,7 +103,7 @@ get_otx_indicator_details:
 create_otx_pulse:
   id: 'Create OTX Pulse'
   description: 'Creates a pulse on OTX'
-  app_integration: 'OTX'
+  app_integration: 'AlienVault OTX'
   inputs:
     name:
       type: 'string'
@@ -125,5 +118,14 @@ create_otx_pulse:
       dict_keys: 
         - 'indicator'
         - 'type'
+
+search_otx_pulses:
+  id: 'Search OTX Pulses'
+  description: 'Searches OTX and returns search results based on given input.'
+  app_integration: 'AlienVault OTX'
+  inputs:
+    pulse:
+      type: 'string'
+      required: True
 
 
