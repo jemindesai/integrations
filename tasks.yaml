@@ -38,33 +38,13 @@ get_otx_pulse_indicators:
   id: 'Get OTX Pulse Indicators'
   description: 'Get the indicators of the pulse corresponding to the given pulse ID.'
   app_integration: 'AlienVault OTX'
-  inputs:
-    pulse_id:
-      type: 'string'
-      required: True
+  input_schema: 'schemas/get_otx_pulse_indicators.json'
 
 get_otx_indicator_details:
   id: 'Get OTX Indicator Details'
   description: "Given an indicator type and a resource that corresponds to that type, OTX will return the indicator's details."
   app_integration: 'AlienVault OTX'
-  inputs:
-    type:
-      type: 'string'
-      required: True
-      allowable_values:
-        - 'IPv4'
-        - 'IPv6'
-        - 'domain'
-        - 'hostname'
-        - 'url'
-        - 'hash'
-        - 'md5'
-        - 'sha1'
-        - 'sha256'
-        - 'cve'
-    resource:
-      type: 'string'
-      required: True
+  input_schema: 'schema/get_otx_indicator_details.json'
 
 create_otx_pulse:
   id: 'Create OTX Pulse'
