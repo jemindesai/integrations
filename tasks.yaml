@@ -32,10 +32,7 @@ get_otx_pulse_details:
   id: 'Get OTX Pulse Details'
   description: 'Gets the details of the pulse corresponding to the given pulse ID.'
   app_integration: 'AlienVault OTX'
-  inputs:
-    pulse_id: 
-      type: 'string'
-      required: True
+  input_schema: 'schemas/get_otx_pulse_details.json'
 
 get_otx_pulse_indicators:
   id: 'Get OTX Pulse Indicators'
