@@ -12,7 +12,7 @@
 				"required": ["indicator", "type"],
 				"properties": {
 					"indicator": {"type": "string", "title": "Indicator"},
-					"type": {"type": "number", "title": "Indicator Type",
+					"type": {"type": "string", "title": "Indicator Type",
 							"enum": ["CIDR", "CVE", "domain", "email", 
 									"FileHash-MD5", "FileHash-SHA1", 
 									"FileHash-SHA256", "FileHash-PEHASH",
