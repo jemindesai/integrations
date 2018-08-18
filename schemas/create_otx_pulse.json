@@ -5,13 +5,25 @@
 		"name": {"type": "string", "title": "Name of Pulse"},
 		"indicators": {
 			"type": "array",
+			"minItems": 1,
 			"title": "Indicators of Compromise",
 			"items": {
 				"type": "object",
 				"required": ["indicator", "type"],
 				"properties": {
 					"indicator": {"type": "string", "title": "Indicator"},
-					"type": {"type": "string", "title": "Indicator Type"}
+					"type": {"type": "number", "title": "Indicator Type",
+							"enum": ["CIDR", "CVE", "domain", "email", 
+									"FileHash-MD5", "FileHash-SHA1", 
+									"FileHash-SHA256", "FileHash-PEHASH",
+									"FileHash-IMPHASH", "filepath", 
+									"hostname", "IPv4", "IPv6", "Mutex",
+									"URI", "URL"],
+							"enumNames": ["CIDR", "CVE", "Domain", "Email",
+										"MD5", "SHA1", "SHA256", "PEHASH",
+										"IMPHASH", "File Path", "Host Name",
+										"IPv4", "IPv6", "Mutex", "URI", "URL"]
+					}
 				}
 			}
 		}
