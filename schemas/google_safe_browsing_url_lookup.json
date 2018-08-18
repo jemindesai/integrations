@@ -4,6 +4,7 @@
 	"properties": {
 		"url": {"type": "string", "title": "URL", "format": "uri"},
 		"platform_types": {"type": "array",
+			"title": "Platform Types",
 			"uniqueItems": true,
 			"items": {
 				"type": "string",
