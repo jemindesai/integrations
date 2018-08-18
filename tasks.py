@@ -111,7 +111,7 @@ otx_scan_hash.id = 'OTX Scan Hash'
 def otx_scan_file(d):
 
 	otx = OTX()
-	return otx_scan_file(d)
+	return otx.scan_file(d)
 
 otx_scan_file.id = 'OTX Scan File'
 

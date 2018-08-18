@@ -1,18 +1,18 @@
 abuse_ipdb_check_ip:
   id: 'AbuseIPDB Check IP'
-  description: 'AbuseIPDB returns reports created within the given number of days that it finds for the given IP Address'
+  description: 'AbuseIPDB returns reports created within the given number of days that it finds for the given IP Address.'
   app_integration: 'AbuseIPDB'
   input_schema: 'schemas/abuse_ipdb_check_ip.json'
 
 abuse_ipdb_check_cidr:
   id: 'AbuseIPDB Check CIDR'
-  description: 'AbuseIPDB returns reports created within the given number of days that it finds for the given CIDR'
+  description: 'AbuseIPDB returns reports created within the given number of days that it finds for the given CIDR.'
   app_integration: 'AbuseIPDB'
   input_schema: 'schemas/abuse_ipdb_check_cidr.json'
 
 abuse_ipdb_report_ip:
   id: 'AbuseIPDB Report IP'
-  description: 'Reports the given IP Address to AbuseIPDB'
+  description: 'Reports the given IP Address to AbuseIPDB.'
   app_integration: 'AbuseIPDB'
   input_schema: 'schemas/abuse_ipdb_report_ip.json'
 
@@ -44,34 +44,46 @@ get_otx_indicator_details:
   id: 'Get OTX Indicator Details'
   description: "Given an indicator type and a resource that corresponds to that type, OTX will return the indicator's details."
   app_integration: 'AlienVault OTX'
-  input_schema: 'schema/get_otx_indicator_details.json'
+  input_schema: 'schemas/get_otx_indicator_details.json'
 
 create_otx_pulse:
   id: 'Create OTX Pulse'
-  description: 'Creates a pulse on OTX'
+  description: 'Creates a pulse on OTX.'
   app_integration: 'AlienVault OTX'
-  inputs:
-    name:
-      type: 'string'
-      required: True
-    indicators:
-      type: 'list'
-      required: True
-      value_type: 'dict'
-      dict_key_type: 'string'
-      dict_value_type: 'string'
-      min_length: 0
-      dict_keys: 
-        - 'indicator'
-        - 'type'
+  input_schema: 'schemas/create_otx_pulse.json'
 
 search_otx_pulses:
   id: 'Search OTX Pulses'
   description: 'Searches OTX and returns search results based on given input.'
   app_integration: 'AlienVault OTX'
-  inputs:
-    pulse:
-      type: 'string'
-      required: True
+  inputs_schema: 'schemas/search_otx_pulses.json'
 
+otx_scan_ip:
+  id: "OTX Scan IP"
+  description: 'Scan an IP using OTX.'
+  app_integration: 'AlienVault OTX'
+  input_schema: 'schemas/otx_scan_ip.json'
 
+otx_scan_host:
+  id: "OTX Scan Host"
+  description: 'Scan a host using OTX.'
+  app_integration: 'AlienVault OTX'
+  input_schema: 'schemas/otx_scan_host.json'
+
+otx_scan_url:
+  id: "OTX Scan URL"
+  description: 'Scan a URL using OTX.'
+  app_integration: 'AlienVault OTX'
+  input_schema: 'schemas/otx_scan_url.json'
+
+otx_scan_hash:
+  id: 'OTX Scan Hash'
+  description: 'Scan a hash (MD5, SHA1, SHA256) using OTX.'
+  app_integration: 'AlienVault OTX'
+  input_schema: 'schemas/otx_scan_hash.json'
+
+# otx_scan_file:
+ # id: 'OTX Scan File'
+ # description: 'Scan a file using OTX'
+ # app_integration: 'AlienVault OTX'
+ # input_schema: 'schemas/otx_scan_file.json'
