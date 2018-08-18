@@ -74,3 +74,56 @@ get_otx_pulse_details:
     pulse_id: 
       type: 'string'
       required: True
+
+get_otx_pulse_indicators:
+  id: 'Get OTX Pulse Indicators'
+  description: 'Get the indicators of the pulse corresponding to the given pulse ID.'
+  app_integration: 'OTX'
+  inputs:
+    pulse_id:
+      type: 'string'
+      required: True
+
+get_otx_indicator_details:
+  id: 'Get OTX Indicator Details'
+  description: "Given an indicator type and a resource that corresponds to that type, OTX will return the indicator's details."
+  app_integration: 'OTX'
+  inputs:
+    type:
+      type: 'string'
+      required: True
+      allowable_values:
+        - 'IPv4'
+        - 'IPv6'
+        - 'domain'
+        - 'hostname'
+        - 'url'
+        - 'hash'
+        - 'md5'
+        - 'sha1'
+        - 'sha256'
+        - 'cve'
+    resource:
+      type: 'string'
+      required: True
+
+create_otx_pulse:
+  id: 'Create OTX Pulse'
+  description: 'Creates a pulse on OTX'
+  app_integration: 'OTX'
+  inputs:
+    name:
+      type: 'string'
+      required: True
+    indicators:
+      type: 'list'
+      required: True
+      value_type: 'dict'
+      dict_key_type: 'string'
+      dict_value_type: 'string'
+      min_length: 0
+      dict_keys: 
+        - 'indicator'
+        - 'type'
+
+
