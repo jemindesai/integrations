@@ -1,0 +1,13 @@
+{
+	"type": "object",
+	"required": ["type", "resource"],
+	"properties": {
+		"type": {"type": "string", "title": "Resource Type",
+				"enum": ["IPv4", "IPv6", "domain", "hostname",
+						"url", "hash", "md5", "sha1", "sha256", "cve"],
+				"enumNames": ["IPv4", "IPv6", "Domain", "Host Name",
+							"URL", "Hash", "MD5", "SHA1", "SHA256", "CVE"]
+		},
+		"resource": {"type": "string", "title": "Resource"}
+	}
+}
