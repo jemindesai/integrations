@@ -3,6 +3,6 @@
 	"required": ["cidr"],
 	"properties": {
 		"cidr": {"type": "string", "title": "CIDR"},
-		"days": {"type": "string", "title": "Days", "default": "30"}
+		"days": {"type": "string", "title": "Days"}
 	}
 }

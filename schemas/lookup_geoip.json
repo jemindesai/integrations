@@ -7,7 +7,6 @@
 					{"format": "ipv4"},
 					{"format": "ipv6"}
 				]
-		},
-		"days": {"type": "string", "title": "Days"}
+		}
 	}
 }
