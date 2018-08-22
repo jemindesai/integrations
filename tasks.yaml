@@ -56,7 +56,7 @@ search_otx_pulses:
   id: 'Search OTX Pulses'
   description: 'Searches OTX and returns search results based on given input.'
   app_integration: 'AlienVault OTX'
-  inputs_schema: 'schemas/search_otx_pulses.json'
+  input_schema: 'schemas/search_otx_pulses.json'
 
 otx_scan_ip:
   id: "OTX Scan IP"
@@ -87,3 +87,63 @@ otx_scan_hash:
  # description: 'Scan a file using OTX'
  # app_integration: 'AlienVault OTX'
  # input_schema: 'schemas/otx_scan_file.json'
+
+send_email:
+  id: 'Send Email'
+  description: 'Send an email.'
+  app_integration: 'SendGrid'
+  input_schema: 'schemas/send_email.json'
+
+shodan_lookup_host:
+  id: 'Shodan Lookup Host'
+  description: 'Look up an IP Address using Shodan.'
+  app_integration: 'Shodan'
+  input_schema: 'schemas/shodan_lookup_host.json'
+
+send_text:
+  id: 'Send Text'
+  description: 'Send a text.'
+  app_integration: 'Twilio'
+  input_schema: 'schemas/send_text.json'
+
+make_call:
+  id: 'Make Call'
+  description: 'Make a phone call.'
+  app_integration: 'Twilio'
+  input_schema: 'schemas/make_call.json'
+
+vt_get_hash_report:
+  id: 'VT Get Hash Report'
+  description: 'Use VirusTotal to get the report of a file, if it exists. The report will exist if the input file has been scanned by VirusTotal before.'
+  app_integration: 'VirusTotal'
+  input_schema: 'schemas/vt_get_hash_report.json'
+
+vt_scan_and_report:
+  id: 'VT Scan and Report'
+  description: 'Use VirusTotal to scan a URL containing a file and retrieve its report.'
+  app_integration: 'VirusTotal'
+  input_schema: 'schemas/vt_scan_and_report.json'
+
+vt_get_domain_report:
+  id: 'VT Get Domain Report'
+  description: "Get VirusTotal's report on a domain."
+  app_integration: 'VirusTotal'
+  input_schema: 'schemas/vt_get_domain_report.json'
+
+vt_get_ip_report:
+  id: 'VT Get IP Report'
+  description: "Get VirusTotal's report on an IP Address."
+  app_integration: 'VirusTotal'
+  input_schema: 'schemas/vt_get_ip_report.json'
+
+ha_search_hashes:
+  id: 'HybridAnalysis Search Hashes'
+  description: 'Use Falcon Sandbox to get a summary for the given hashes.'
+  app_integration: 'HybridAnalysis'
+  input_schema: 'schemas/ha_search_hashes.json'
+
+ha_search_database:
+  id: 'HybridAnalysis Search Database'
+  description: "Search Falcon Sandbox's database."
+  app_integration: 'HybridAnalysis'
+  input_schema: 'schemas/ha_search_database.json'
