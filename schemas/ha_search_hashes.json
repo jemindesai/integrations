@@ -1,6 +1,6 @@
 {
 	"type": "object",
-	"required": ["hashes"],
+	"required": ["hashes[]"],
 	"properties": {
 		"hashes[]": {
 			"type": "array",
