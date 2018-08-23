@@ -1,155 +1,155 @@
 abuse_ipdb_check_ip:
-  name: 'AbuseIPDB Check IP'
+  id: 'AbuseIPDB Check IP'
   description: 'AbuseIPDB returns reports created within the given number of days that it finds for the given IP Address.'
   app_integration: 'AbuseIPDB'
   input_schema: 'schemas/abuse_ipdb_check_ip.json'
 
 abuse_ipdb_check_cidr:
-  name: 'AbuseIPDB Check CIDR'
+  id: 'AbuseIPDB Check CIDR'
   description: 'AbuseIPDB returns reports created within the given number of days that it finds for the given CIDR.'
   app_integration: 'AbuseIPDB'
   input_schema: 'schemas/abuse_ipdb_check_cidr.json'
 
 abuse_ipdb_report_ip:
-  name: 'AbuseIPDB Report IP'
+  id: 'AbuseIPDB Report IP'
   description: 'Reports the given IP Address to AbuseIPDB.'
   app_integration: 'AbuseIPDB'
   input_schema: 'schemas/abuse_ipdb_report_ip.json'
 
 lookup_geoip:
-  name: 'Lookup GeoIP'
+  id: 'Lookup GeoIP'
   description: 'Looks up the given IP Address and returns its geographical info.'
   app_integration: 'GeoIP'
   input_schema: 'schemas/lookup_geoip.json'
 
 google_safe_browsing_url_lookup:
-  name: 'Google Safe Browsing URL Lookup'
+  id: 'Google Safe Browsing URL Lookup'
   description: 'Looks up the given URL and returns all threat information corresponding to the URL.'
   app_integration: 'Google Safe Browsing'
   input_schema: 'schemas/google_safe_browsing_url_lookup.json'
 
 get_otx_pulse_details:
-  name: 'Get OTX Pulse Details'
+  id: 'Get OTX Pulse Details'
   description: 'Gets the details of the pulse corresponding to the given pulse ID.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/get_otx_pulse_details.json'
 
 get_otx_pulse_indicators:
-  name: 'Get OTX Pulse Indicators'
+  id: 'Get OTX Pulse Indicators'
   description: 'Get the indicators of the pulse corresponding to the given pulse ID.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/get_otx_pulse_indicators.json'
 
 get_otx_indicator_details:
-  name: 'Get OTX Indicator Details'
+  id: 'Get OTX Indicator Details'
   description: "Given an indicator type and a resource that corresponds to that type, OTX will return the indicator's details."
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/get_otx_indicator_details.json'
 
 create_otx_pulse:
-  name: 'Create OTX Pulse'
+  id: 'Create OTX Pulse'
   description: 'Creates a pulse on OTX.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/create_otx_pulse.json'
 
 search_otx_pulses:
-  name: 'Search OTX Pulses'
+  id: 'Search OTX Pulses'
   description: 'Searches OTX and returns search results based on given input.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/search_otx_pulses.json'
 
 otx_scan_ip:
-  name: "OTX Scan IP"
+  id: "OTX Scan IP"
   description: 'Scan an IP using OTX.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/otx_scan_ip.json'
 
 otx_scan_host:
-  name: "OTX Scan Host"
+  id: "OTX Scan Host"
   description: 'Scan a host using OTX.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/otx_scan_host.json'
 
 otx_scan_url:
-  name: "OTX Scan URL"
+  id: "OTX Scan URL"
   description: 'Scan a URL using OTX.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/otx_scan_url.json'
 
 otx_scan_hash:
-  name: 'OTX Scan Hash'
+  id: 'OTX Scan Hash'
   description: 'Scan a hash (MD5, SHA1, SHA256) using OTX.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/otx_scan_hash.json'
 
 # otx_scan_file:
- # name: 'OTX Scan File'
+ # id: 'OTX Scan File'
  # description: 'Scan a file using OTX'
  # app_integration: 'AlienVault OTX'
  # input_schema: 'schemas/otx_scan_file.json'
 
 send_email:
-  name: 'Send Email'
+  id: 'Send Email'
   description: 'Send an email.'
   app_integration: 'SendGrid'
   input_schema: 'schemas/send_email.json'
 
 shodan_lookup_host:
-  name: 'Shodan Lookup Host'
+  id: 'Shodan Lookup Host'
   description: 'Look up an IP Address using Shodan.'
   app_integration: 'Shodan'
   input_schema: 'schemas/shodan_lookup_host.json'
 
 send_text:
-  name: 'Send Text'
+  id: 'Send Text'
   description: 'Send a text.'
   app_integration: 'Twilio'
   input_schema: 'schemas/send_text.json'
 
 make_call:
-  name: 'Make Call'
+  id: 'Make Call'
   description: 'Make a phone call.'
   app_integration: 'Twilio'
   input_schema: 'schemas/make_call.json'
 
 vt_get_hash_report:
-  name: 'VT Get Hash Report'
+  id: 'VT Get Hash Report'
   description: 'Use VirusTotal to get the report of a file, if it exists. The report will exist if the input file has been scanned by VirusTotal before.'
   app_integration: 'VirusTotal'
   input_schema: 'schemas/vt_get_hash_report.json'
 
 vt_scan_and_report:
-  name: 'VT Scan and Report'
+  id: 'VT Scan and Report'
   description: 'Use VirusTotal to scan a URL containing a file and retrieve its report.'
   app_integration: 'VirusTotal'
   input_schema: 'schemas/vt_scan_and_report.json'
 
 vt_get_domain_report:
-  name: 'VT Get Domain Report'
+  id: 'VT Get Domain Report'
   description: "Get VirusTotal's report on a domain."
   app_integration: 'VirusTotal'
   input_schema: 'schemas/vt_get_domain_report.json'
 
 vt_get_ip_report:
-  name: 'VT Get IP Report'
+  id: 'VT Get IP Report'
   description: "Get VirusTotal's report on an IP Address."
   app_integration: 'VirusTotal'
   input_schema: 'schemas/vt_get_ip_report.json'
 
 ha_search_hashes:
-  name: 'HybridAnalysis Search Hashes'
+  id: 'HybridAnalysis Search Hashes'
   description: 'Use Falcon Sandbox to get a summary for the given hashes.'
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/ha_search_hashes.json'
 
 ha_search_database:
-  name: 'HybridAnalysis Search Database'
+  id: 'HybridAnalysis Search Database'
   description: "Search Falcon Sandbox's database."
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/ha_search_database.json'
 
 ha_overview:
-  name: 'HybridAnalysis Overview'
+  id: 'HybridAnalysis Overview'
   description: 'Get the overview for an SHA256 hash from Falcon Sandbox.'
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/ha_overview.json'
