@@ -148,8 +148,20 @@ ha_search_database:
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/ha_search_database.json'
 
+ha_quickscan_with_overview:
+  id: 'HybridAnalysis QuickScan with Overview'
+  description: "Submit a file for a quickscan through HybridAnalysis and get the overview once it's ready."
+  app_integration: 'HybridAnalysis'
+  input_schema: 'schemas/ha_quickscan_with_overview.json'
+
 ha_overview:
   id: 'HybridAnalysis Overview'
-  description: 'Get the overview for an SHA256 hash from Falcon Sandbox.'
+  description: 'Get the overview for an SHA256 hash from Falcon Sandbox. If a scan ID is provided, the task will check if the scan is finished before returning the overview.'
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/ha_overview.json'
+
+ha_quickscan:
+  id: 'HybridAnalysis QuickScan'
+  description: "Use HybridAnalysis to quickscan a file. Use this task instead of 'QuickScan with Overview' if you want to run a scan, do something else while the overview loads, and check on the scan later through the 'Overview' task."
+  app_integration: 'HybridAnalysis'
+  input_schema: 'schemas/ha_quickscan.json'

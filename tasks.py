@@ -191,3 +191,17 @@ def ha_overview(d):
 	return ha.overview(d)
 
 ha_overview.id = 'HybridAnalysis Overview'
+
+def ha_quickscan_with_overview(d):
+
+	ha = HybridAnalysis()
+	return ha.quickscan_with_overview(d)
+
+ha_quickscan_with_overview.id = 'HybridAnalysis QuickScan with Overview'
+
+def ha_quickscan(d):
+
+	ha = HybridAnalysis()
+	return ha.quickscan(d)
+
+ha_quickscan.id = 'HybridAnalysis QuickScan'
