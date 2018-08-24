@@ -2,6 +2,24 @@
 	"type": "object",
 	"required": ["url"],
 	"properties": {
-		"url": {"type": "string", "title": "File URL", "format": "uri"}
+		"url": {"type": "string", "title": "File URL", "format": "uri"},
+		"no_share_third_party": {
+			"type": "boolean", 
+			"title": "Allow sharing with third party?",
+			"default": true
+		},
+		"allow_community_access": {
+			"type": "boolean",
+			"title": "Allow community access?",
+			"default": true
+		},
+		"comment": {
+			"type": "string",
+			"title": "Comment"
+		},
+		"submit_name": {
+			"type": "string",
+			"title": "Submission Name"
+		}
 	}
 }
