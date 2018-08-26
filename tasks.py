@@ -192,16 +192,51 @@ def ha_overview(d):
 
 ha_overview.id = 'HybridAnalysis Overview'
 
-def ha_quickscan_with_overview(d):
+def ha_quickscan_file_with_overview(d):
 
 	ha = HybridAnalysis()
-	return ha.quickscan_with_overview(d)
+	return ha.quickscan_file_with_overview(d)
 
-ha_quickscan_with_overview.id = 'HybridAnalysis QuickScan with Overview'
+ha_quickscan_file_with_overview.id = 'HybridAnalysis QuickScan File with Overview'
 
-def ha_quickscan(d):
+def ha_quickscan_file(d):
 
 	ha = HybridAnalysis()
-	return ha.quickscan(d)
+	return ha.quickscan_file(d)
 
-ha_quickscan.id = 'HybridAnalysis QuickScan'
+ha_quickscan_file.id = 'HybridAnalysis QuickScan File'
+
+def ha_convert_quickscan_to_sandbox(d):
+
+	ha = HybridAnalysis()
+	return ha.convert_quickscan_to_sandbox(d)
+
+ha_convert_quickscan_to_sandbox.id = 'HybridAnalysis Convert QuickScan to Sandbox'
+
+def ha_quickscan_url(d):
+
+	ha = HybridAnalysis()
+	return ha.quickscan_url(d)
+
+ha_quickscan_url.id = 'HybridAnalysis QuickScan URL'
+
+def ha_quickscan_url_with_overview(d):
+
+	ha = HybridAnalysis()
+	return ha.quickscan_url_with_overview(d)
+
+ha_quickscan_url_with_overview.id = 'HybridAnalysis QuickScan URL with Overview'
+
+def ha_submit_file(d):
+
+	ha = HybridAnalysis()
+	return ha.submit_file(d)
+
+ha_submit_file.id = 'HybridAnalysis Submit File'
+
+def ha_sandbox_reports(d):
+
+	ha = HybridAnalysis()
+	return ha.sandbox_reports(d)
+
+ha_sandbox_reports.id = 'HybridAnalysis Sandbox Reports'

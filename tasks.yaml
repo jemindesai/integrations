@@ -148,11 +148,11 @@ ha_search_database:
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/ha_search_database.json'
 
-ha_quickscan_with_overview:
-  id: 'HybridAnalysis QuickScan with Overview'
+ha_quickscan_file_with_overview:
+  id: 'HybridAnalysis QuickScan File with Overview'
   description: "Submit a file for a quickscan through HybridAnalysis and get the overview once it's ready."
   app_integration: 'HybridAnalysis'
-  input_schema: 'schemas/ha_quickscan_with_overview.json'
+  input_schema: 'schemas/ha_quickscan_file_with_overview.json'
 
 ha_overview:
   id: 'HybridAnalysis Overview'
@@ -160,8 +160,39 @@ ha_overview:
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/ha_overview.json'
 
-ha_quickscan:
-  id: 'HybridAnalysis QuickScan'
-  description: "Use HybridAnalysis to quickscan a file. Use this task instead of 'QuickScan with Overview' if you want to run a scan, do something else while the overview loads, and check on the scan later through the 'Overview' task."
+ha_quickscan_file:
+  id: 'HybridAnalysis QuickScan File'
+  description: "Use HybridAnalysis to quickscan a file. Use this task instead of 'QuickScan File with Overview' if you want to run a scan, do something else while the overview loads, and check on the results later through the 'Overview' task."
   app_integration: 'HybridAnalysis'
-  input_schema: 'schemas/ha_quickscan.json'
+  input_schema: 'schemas/ha_quickscan_file.json'
+
+ha_convert_quickscan_to_sandbox:
+  id: 'HybridAnalysis Convert QuickScan to Sandbox'
+  description: "Take a quickscan that has already been performed through HybridAnalysis and convert it into a sandbox submission."
+  app_integration: 'HybridAnalysis'
+  input_schema: 'schemas/ha_convert_quickscan_to_sandbox.json'
+
+ha_quickscan_url:
+  id: 'HybridAnalysis QuickScan URL'
+  description: "Use HybridAnalysis to quickscan a URL. Use this task instead of 'QuickScan URL with Overview' if you want to run a scan, do something else while the overview loads, and check on the results later through the 'Overview' task."
+  app_integration: 'HybridAnalysis'
+  input_schema: 'schemas/ha_quickscan_url.json'
+
+ha_quickscan_url_with_overview:
+  id: 'HybridAnalysis QuickScan URL with Overview'
+  description: "Submit a file for a quickscan through HybridAnalysis and get the overview once it's ready."
+  app_integration: 'HybridAnalysis'
+  input_schema: 'schemas/ha_quickscan_url_with_overview.json'
+
+ha_submit_file:
+  id: 'HybridAnalysis Submit File'
+  description: "Submit a file to HybridAnalysis's Falcon Sandbox."
+  app_integration: 'HybridAnalysis'
+  input_schema: 'schemas/ha_submit_file.json'
+
+ha_sandbox_reports:
+  id: 'HybridAnalysis Sandbox Reports'
+  description: "Retrieve reports for completed Falcon Sandbox submissions."
+  app_integration: 'HybridAnalysis'
+  input_schema: 'schemas/ha_sandbox_reports.json'
+
