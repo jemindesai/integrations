@@ -1,6 +1,7 @@
 from appintegration import *
 import requests
 import time
+import json
 
 class HybridAnalysis(AppIntegration):
 
@@ -173,29 +174,55 @@ class HybridAnalysis(AppIntegration):
 
 	def sandbox_reports(self, d):
 		"""
-		Takes in a dict D with key HASHES[], which is a list of
-		ids. The ids are either jobIDs associated with previous
-		sandbox submissions, or of the form <hash>:<environmentID>.
-		The task checks if the sandbox submissions have finished
-		running before returning an output. If any provided id is
-		incomplete or errors, the task provides a list of sandbox
-		report statuses. Else, it returns a list of summaries--
-		one for each hash submitted.
+		Takes in a dict D with key IDS, which is a list of dicts
+		containing the keys ID (string), JOB_ID (boolean), and
+		ENVIRONMENT_ID (integer). If JOB_ID is true, the ID will
+		be added to a new dictionary with the key HASHES[], which
+		is the list of ids that the sandbox will retrieve reports
+		for. If JOB_ID is false, then the ID string will be combined
+		with the ENVIRONMENT_ID to form the valid id that can be
+		added to HASHES[].
 		"""
 		headers = {'api-key': self.api_key, 'user-agent': 'Falcon Sandbox'}
-		unfinished = []
+		request_dict = {}
+		request_dict['hashes[]'] = []
+		try:
+			for i in d['ids']:
+				if i['job_id']:
+					request_dict['hashes[]'].append(i['id'])
+				else:
+					request_dict['hashes[]'].append(
+						i['id'] + ':' + str(i['environment_id']))
 
-		for i in d['hashes[]']:
-			url = self.base_url + '/report/{id}/state'.format(id = i)
-			params = {'id': i}
-			result = requests.get(url, params = params, headers = headers).json()
-			success = 'state' in result
-			if not success or result['state'] != 'SUCCESS':
-				result['id'] = i
-				unfinished.append(result)
+			if not request_dict:
+				return {'message': 'Please input at least one ID.'}
 
-		if unfinished:
-			return unfinished
+			unfinished = []
+			index = 0
 
-		url = self.base_url + '/report/summary'
-		return requests.post(url, data=d, headers=headers).json()
+			for i in request_dict['hashes[]']:
+				url = self.base_url + '/report/{id}/state'.format(id = i)
+				params = {'id': i}
+				result = requests.get(url, params = params, headers = headers).json()
+				success = 'state' in result
+				if not success or result['state'] != 'SUCCESS':
+					result['id'] = i
+					unfinished.append(result)
+					request_dict['hashes[]'][index] = None
+				index += 1
+
+			if unfinished:
+				while None in request_dict['hashes[]']:
+					request_dict['hashes[]'].remove(None)
+
+			if not request_dict['hashes[]']:
+				return unfinished
+
+			url = self.base_url + '/report/summary'
+			result = requests.post(url, data=request_dict, headers=headers).json()
+			if type(result) == dict:
+				return result
+			result.extend(unfinished)
+			return result
+		except json.JSONDecodeError:
+			return {'error': 'Something went wrong. Try again.'}
