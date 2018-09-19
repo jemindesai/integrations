@@ -1,5 +1,6 @@
 from appintegration import *
 from twilio.rest import Client
+import twilio
 
 class Twilio(AppIntegration):
 	"""
@@ -16,16 +17,26 @@ class Twilio(AppIntegration):
 
 	def send_text(self, d):
 		"""
-		Takes in a dictionary D with keys PHONE_NUMBER and
-		MESSAGE, whose values are both strings, and sends a text.
-		"""
+		Takes in a dictionary D with keys COUNTRY_CODE, PHONE_NUMBER, 
+		and MESSAGE, whose values are all strings, and sends a text.
+		"""	
 		try:
+			d['phone_number'] = d['phone_number'].replace('-', '')
+			d['phone_number'] = d['phone_number'].replace(' ', '')
+
+			start = d['country_code'].find('(') + 1
+			end = d['country_code'].find(')', start)
+			d['country_code'] = d['country_code'][start:end]
+
+			d['phone_number'] = d['country_code'] + d['phone_number']
+
 			message = self.client.messages\
 				.create(
 					body = d['message'],
 					from_ = self.phone_number,
 					to = d['phone_number']
 				)
+
 		except twilio.base.exceptions.TwilioRestException:
 			return {'status' : 'Error',
 					'error_message' : 'Message failed to send'}
@@ -37,10 +48,19 @@ class Twilio(AppIntegration):
 
 	def make_call(self, d):
 		"""
-		Takes in a dictionary D with key PHONE_NUMBER, whose value
-		is a string, and calls the provided number.
+		Takes in a dictionary D with keys COUNTRY_CODE and PHONE_NUMBER,
+		whose values are strings, and calls the provided number.
 		"""
 		try:
+			d['phone_number'] = d['phone_number'].replace('-', '')
+			d['phone_number'] = d['phone_number'].replace(' ', '')
+
+			start = d['country_code'].find('(') + 1
+			end = d['country_code'].find(')', start)
+			d['country_code'] = d['country_code'][start:end]
+
+			d['phone_number'] = d['country_code'] + d['phone_number']
+
 			call = self.client.calls.create(
 					to = d['phone_number'],
 					from_ = self.phone_number,
