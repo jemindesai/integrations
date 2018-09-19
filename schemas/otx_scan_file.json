@@ -1,7 +1,0 @@
-{
-	"type": "object",
-	"required": ["file"],
-	"properties": {
-		"file": {"type": "string", "title": "File"}
-	}
-}
