@@ -1,7 +1,0 @@
-{
-	"type": "object",
-	"required": ["domain"],
-	"properties": {
-		"domain": {"type": "string", "title": "Domain"}
-	}
-}
