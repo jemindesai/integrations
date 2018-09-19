@@ -20,3 +20,4 @@ class SendGrid(AppIntegration):
 		content = Content("text/plain", d['content'])
 		mail = Mail(from_email, subject, to_email, content)
 		response = self.APIclient.client.mail.send.post(request_body=mail.get())
+		return {'status': 'OK'}
