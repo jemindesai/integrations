@@ -1,0 +1,7 @@
+{
+	"type": "object",
+	"required": ["pulse_id"],
+	"properties": {
+		"pulse_id": {"type": "string", "title": "Pulse ID"}
+	}
+}

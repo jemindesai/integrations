@@ -1,0 +1,13 @@
+{
+	"type": "object",
+	"required": ["ip"],
+	"properties": {
+		"ip": {"type": "string", "title": "IP Address", 
+				"oneOf": [
+					{"format": "ipv4"},
+					{"format": "ipv6"}
+				]
+		},
+		"days": {"type": "string", "title": "Days"}
+	}
+}

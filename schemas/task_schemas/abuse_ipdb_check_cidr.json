@@ -1,0 +1,8 @@
+{
+	"type": "object",
+	"required": ["cidr"],
+	"properties": {
+		"cidr": {"type": "string", "title": "CIDR"},
+		"days": {"type": "string", "title": "Days"}
+	}
+}

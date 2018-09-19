@@ -1,0 +1,29 @@
+{
+	"type": "object",
+	"required": ["ids"],
+	"properties": {
+		"ids": {
+			"type": "array",
+			"minItems": 1,
+			"title": "List of IDs",
+			"items": {
+				"type": "object",
+				"title": "ID",
+				"required": ["id"],
+				"properties": {
+					"id": {"type": "string", "title": "JobID or SHA256"},
+					"job_id": {"type": "boolean", "title": "JobID?", "default": false},
+					"environment_id": {
+						"type": "number", "title": "Environment (for SHA256)",
+						"enum": [300, 200, 120, 110, 100],
+						"enumNames": ["Linux (Ubuntu 16.04, 64 bit)",
+									"Android Static Analysis",
+									"Windows 7 64 bit",
+									"Windows 7 32 bit (HWP Support)",
+									"Windows 7 32 bit"] 
+					}
+				}
+			}
+		}
+	}
+}
