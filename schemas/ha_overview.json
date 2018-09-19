@@ -1,8 +1,0 @@
-{
-	"type": "object",
-	"required": ["sha256"],
-	"properties": {
-		"sha256" : {"type": "string", "title": "SHA256"},
-		"id": {"type": "string", "title": "QuickScan ID"}
-	}
-}
