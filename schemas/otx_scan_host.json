@@ -1,7 +1,0 @@
-{
-	"type": "object",
-	"required": ["host"],
-	"properties": {
-		"host": {"type": "string", "title": "Host"}
-	}
-}
