@@ -1,7 +1,0 @@
-{
-	"type": "object",
-	"required": ["resource"],
-	"properties": {
-		"resource": {"type": "string", "title": "URL"}
-	}
-}
