@@ -1,0 +1,11 @@
+{
+	"ui:order": ["id", "environment_id", "no_share_third_party",
+				"allow_community_access", "no_hash_lookup", "action_script",
+				"hybrid_analysis", "experimental_anti_evasion",
+				"script_logging", "input_sample_tampering",
+				"tor_enabled_analysis", "offline_analysis",
+				"email", "properties", "comment",
+				"custom_date_time", "custom_cmd_line",
+				"client", "submit_name", "priority",
+				"document_password", "environment_variable"]
+}
