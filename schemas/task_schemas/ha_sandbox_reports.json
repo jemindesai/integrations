@@ -22,7 +22,8 @@
 									"Windows 7 32 bit (HWP Support)",
 									"Windows 7 32 bit"] 
 					}
-				}
+				},
+				"ui:order": ["id", "job_id", "environment_id"]
 			}
 		}
 	}
