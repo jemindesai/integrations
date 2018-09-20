@@ -1,0 +1,4 @@
+{
+	"ui:order": ["url", "no_share_third_party", "allow_community_access",
+				"comment", "submit_name"]
+}
