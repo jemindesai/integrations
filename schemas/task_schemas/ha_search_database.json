@@ -26,5 +26,9 @@
 		"imp_hash": {"type": "string"},
 		"ssdeep": {"type": "string"},
 		"authentihash": {"type": "string"}
-	}
+	},
+	"ui:order": ["filename", "filetype", "filetype_desc", "env_id",
+				"country", "verdict", "av_detect", "vx_family", "tag",
+				"port", "host", "domain", "url", "similar_to", "context",
+				"imp_hash", "ssdeep", "authentihash"]
 }
