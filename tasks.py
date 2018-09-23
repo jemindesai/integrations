@@ -9,6 +9,7 @@ from VT_integration import *
 from otx_integration import *
 from google_safe_browsing import *
 from hybrid_analysis import *
+from macvendors_integration import *
 
 def abuse_ipdb_check_ip(d):
 
@@ -240,3 +241,9 @@ def ha_sandbox_reports(d):
 	return ha.sandbox_reports(d)
 
 ha_sandbox_reports.id = 'HybridAnalysis Sandbox Reports'
+
+def get_mac_vendor(d):
+	mac_vendors = MacVendors()
+	return mac_vendors.look_up_mac(d)
+
+get_mac_vendor.id = 'Get MAC Vendor'
