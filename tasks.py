@@ -11,6 +11,7 @@ from google_safe_browsing import *
 from hybrid_analysis import *
 from macvendors_integration import MacVendors
 from cvesearch_integration import CVESearch
+from haveibeenpwned_integration import HaveIBeenPwned
 
 def abuse_ipdb_check_ip(d):
 
@@ -254,3 +255,9 @@ def look_up_cve(d):
 	return cve_search.look_up_cve(d)
 
 look_up_cve.id = 'Look Up CVE'
+
+def get_breaches_for_email(d):
+	haveibeenpwned = HaveIBeenPwned()
+	return haveibeenpwned.get_breaches_for_email(d)
+
+get_breaches_for_email.id = 'Get Breaches for Email'

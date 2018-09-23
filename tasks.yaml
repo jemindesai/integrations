@@ -209,3 +209,9 @@ look_up_cve:
   description: 'Get CVE information from circl.lu'
   app_integration: CVESearch
   input_schema: 'schemas/task_schemas/look_up_cve.json'
+
+  get_breaches_for_email:
+    id: 'Get Breaches for Email'
+    description: 'List the breaches an email was involved in. If domain is specified, only search that domain's breaches for the email.
+    app_integration: HaveIBeenPwned
+    input_schema: 'schemas/task_schemas/get_breaches_for_email.json'
