@@ -203,3 +203,9 @@ get_mac_vendor:
   description: "Looks up vendor assigned to a MAC address"
   app_integration: MACVendors
   input_schema: 'schemas/task_schemas/get_mac_vendor.json'
+
+look_up_cve:
+  id: 'Look Up CVE'
+  description: 'Get CVE information from circl.lu'
+  app_integration: CVESearch
+  input_schema: 'schemas/task_schemas/look_up_cve.json'

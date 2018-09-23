@@ -1,0 +1,7 @@
+{
+    "type": "object",
+    "required": ["cve"],
+    "properties": {
+        "cve": {"type": "string", "title": "CVE (eg, CVE-2010-3333)"}
+    }
+}
