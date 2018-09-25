@@ -89,4 +89,5 @@
 									"Yemen (+967)", "Zambia (+260)", "Zimbabwe (+263)"]
 		},
 		"phone_number": {"type": "string", "title": "Phone Number"}
+	}
 }
