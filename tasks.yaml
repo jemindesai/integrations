@@ -2,7 +2,7 @@ abuse_ipdb_check_ip:
   id: 'AbuseIPDB Check IP'
   description: 'AbuseIPDB returns reports created within the given number of days that it finds for the given IP Address.'
   app_integration: 'AbuseIPDB'
-  input_schema: 'schemas/task_schemas/task_schemas/abuse_ipdb_check_ip.json'
+  input_schema: 'schemas/task_schemas/abuse_ipdb_check_ip.json'
   ui_schema: 'schemas/ui_schemas/abuse_ipdb_check_ip_ui.json'
   disabled: false
 
