@@ -4,168 +4,198 @@ abuse_ipdb_check_ip:
   app_integration: 'AbuseIPDB'
   input_schema: 'schemas/task_schemas/abuse_ipdb_check_ip.json'
   ui_schema: 'schemas/ui_schemas/abuse_ipdb_check_ip_ui.json'
+  disabled: false
 
 abuse_ipdb_check_cidr:
   id: 'AbuseIPDB Check CIDR'
   description: 'AbuseIPDB returns reports created within the given number of days that it finds for the given CIDR.'
   app_integration: 'AbuseIPDB'
   input_schema: 'schemas/task_schemas/abuse_ipdb_check_cidr.json'
+  ui_schema: 'schemas/ui_schemas/abuse_ipdb_check_cidr_ui.json'
+  disabled: false
 
 abuse_ipdb_report_ip:
   id: 'AbuseIPDB Report IP'
   description: 'Reports the given IP Address to AbuseIPDB.'
   app_integration: 'AbuseIPDB'
   input_schema: 'schemas/task_schemas/abuse_ipdb_report_ip.json'
+  ui_schema: 'schemas/ui_schemas/abuse_ipdb_report_ip_ui.json'
+  disabled: false
 
 lookup_geoip:
   id: 'Lookup GeoIP'
   description: 'Looks up the given IP Address and returns its geographical info.'
   app_integration: 'GeoIP'
   input_schema: 'schemas/task_schemas/lookup_geoip.json'
+  disabled: false
 
 google_safe_browsing_url_lookup:
   id: 'Google Safe Browsing URL Lookup'
   description: 'Looks up the given URL and returns all threat information corresponding to the URL.'
   app_integration: 'Google Safe Browsing'
   input_schema: 'schemas/task_schemas/google_safe_browsing_url_lookup.json'
+  disabled: true
 
 get_otx_pulse_details:
   id: 'Get OTX Pulse Details'
   description: 'Gets the details of the pulse corresponding to the given pulse ID.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/task_schemas/get_otx_pulse_details.json'
+  disabled: false
 
 get_otx_pulse_indicators:
   id: 'Get OTX Pulse Indicators'
   description: 'Get the indicators of the pulse corresponding to the given pulse ID.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/task_schemas/get_otx_pulse_indicators.json'
+  disabled: false
 
 get_otx_indicator_details:
   id: 'Get OTX Indicator Details'
   description: "Given an indicator type and a resource that corresponds to that type, OTX will return the indicator's details."
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/task_schemas/get_otx_indicator_details.json'
+  disabled: false
 
 create_otx_pulse:
   id: 'Create OTX Pulse'
   description: 'Creates a pulse on OTX.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/task_schemas/create_otx_pulse.json'
+  disabled: false
 
 search_otx_pulses:
   id: 'Search OTX Pulses'
   description: 'Searches OTX and returns search results based on given input.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/task_schemas/search_otx_pulses.json'
+  disabled: false
 
 otx_scan_ip:
   id: "OTX Scan IP"
   description: 'Scan an IP using OTX.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/task_schemas/otx_scan_ip.json'
+  disabled: false
 
 otx_scan_host:
   id: "OTX Scan Host"
   description: 'Scan a host using OTX.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/task_schemas/otx_scan_host.json'
+  disabled: false
 
 otx_scan_url:
   id: "OTX Scan URL"
   description: 'Scan a URL using OTX.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/task_schemas/otx_scan_url.json'
+  disabled: false
 
 otx_scan_hash:
   id: 'OTX Scan Hash'
   description: 'Scan a hash (MD5, SHA1, SHA256) using OTX.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/task_schemas/otx_scan_hash.json'
+  disabled: false
 
-# otx_scan_file:
- # id: 'OTX Scan File'
- # description: 'Scan a file using OTX'
- # app_integration: 'AlienVault OTX'
- # input_schema: 'schemas/task_schemas/otx_scan_file.json'
+otx_scan_file:
+ id: 'OTX Scan File'
+ description: 'Scan a file using OTX'
+ app_integration: 'AlienVault OTX'
+ input_schema: 'schemas/task_schemas/otx_scan_file.json'
+ disabled: true
 
 send_email:
   id: 'Send Email'
   description: 'Send an email.'
   app_integration: 'SendGrid'
   input_schema: 'schemas/task_schemas/send_email.json'
+  disabled: false
 
 shodan_lookup_host:
   id: 'Shodan Lookup Host'
   description: 'Look up an IP Address using Shodan.'
   app_integration: 'Shodan'
   input_schema: 'schemas/task_schemas/shodan_lookup_host.json'
+  disabled: false
 
 send_text:
   id: 'Send Text'
   description: 'Send a text.'
   app_integration: 'Twilio'
   input_schema: 'schemas/task_schemas/send_text.json'
+  disabled: true
 
 make_call:
   id: 'Make Call'
   description: 'Make a phone call.'
   app_integration: 'Twilio'
   input_schema: 'schemas/task_schemas/make_call.json'
+  disabled: true
 
 vt_get_hash_report:
   id: 'VT Get Hash Report'
   description: 'Use VirusTotal to get the report of a file, if it exists. The report will exist if the input file has been scanned by VirusTotal before.'
   app_integration: 'VirusTotal'
   input_schema: 'schemas/task_schemas/vt_get_hash_report.json'
+  disabled: false
 
 vt_scan_and_report:
   id: 'VT Scan and Report'
   description: 'Use VirusTotal to scan a URL containing a file and retrieve its report.'
   app_integration: 'VirusTotal'
   input_schema: 'schemas/task_schemas/vt_scan_and_report.json'
+  disabled: false
 
 vt_get_domain_report:
   id: 'VT Get Domain Report'
   description: "Get VirusTotal's report on a domain."
   app_integration: 'VirusTotal'
   input_schema: 'schemas/task_schemas/vt_get_domain_report.json'
+  disabled: false
 
 vt_get_ip_report:
   id: 'VT Get IP Report'
   description: "Get VirusTotal's report on an IP Address."
   app_integration: 'VirusTotal'
   input_schema: 'schemas/task_schemas/vt_get_ip_report.json'
+  disabled: false
 
 ha_search_hashes:
   id: 'HybridAnalysis Search Hashes'
   description: 'Use Falcon Sandbox to get a summary for the given hashes.'
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/task_schemas/ha_search_hashes.json'
+  disabled: false
 
 ha_search_database:
   id: 'HybridAnalysis Search Database'
   description: "Search Falcon Sandbox's database."
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/task_schemas/ha_search_database.json'
+  disabled: false
 
 ha_quickscan_file_with_overview:
   id: 'HybridAnalysis QuickScan File with Overview'
   description: "Submit a file for a quickscan through HybridAnalysis and get the overview once it's ready."
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/task_schemas/ha_quickscan_file_with_overview.json'
+  disabled: false
 
 ha_overview:
   id: 'HybridAnalysis Overview'
   description: 'Get the overview for an SHA256 hash from Falcon Sandbox. If a scan ID is provided, the task will check if the scan is finished before returning the overview.'
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/task_schemas/ha_overview.json'
+  disabled: false
 
 ha_quickscan_file:
   id: 'HybridAnalysis QuickScan File'
   description: "Use HybridAnalysis to quickscan a file. Use this task instead of 'QuickScan File with Overview' if you want to run a scan, do something else while the overview loads, and check on the results later through the 'Overview' task."
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/task_schemas/ha_quickscan_file.json'
+  disabled: false
 
 ha_convert_quickscan_to_sandbox:
   id: 'HybridAnalysis Convert QuickScan to Sandbox'
@@ -173,39 +203,33 @@ ha_convert_quickscan_to_sandbox:
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/task_schemas/ha_convert_quickscan_to_sandbox.json'
   ui_schema: 'schemas/ui_schemas/ha_convert_quickscan_to_sandbox_ui.json'
+  disabled: false
 
 ha_quickscan_url:
   id: 'HybridAnalysis QuickScan URL'
   description: "Use HybridAnalysis to quickscan a URL. Use this task instead of 'QuickScan URL with Overview' if you want to run a scan, do something else while the overview loads, and check on the results later through the 'Overview' task."
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/task_schemas/ha_quickscan_url.json'
+  disabled: false
 
 ha_quickscan_url_with_overview:
   id: 'HybridAnalysis QuickScan URL with Overview'
   description: "Submit a file for a quickscan through HybridAnalysis and get the overview once it's ready."
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/task_schemas/ha_quickscan_url_with_overview.json'
+  disabled: false
 
 ha_submit_file:
   id: 'HybridAnalysis Submit File'
   description: "Submit a file to HybridAnalysis's Falcon Sandbox."
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/task_schemas/ha_submit_file.json'
+  disabled: false
 
 ha_sandbox_reports:
   id: 'HybridAnalysis Sandbox Reports'
   description: "Retrieve reports for completed Falcon Sandbox submissions."
   app_integration: 'HybridAnalysis'
   input_schema: 'schemas/task_schemas/ha_sandbox_reports.json'
+  disabled: false
 
-get_mac_vendor:
-  id: 'Get MAC Vendor'
-  description: "Looks up vendor assigned to a MAC address"
-  app_integration: MACVendors
-  input_schema: 'schemas/task_schemas/get_mac_vendor.json'
-
-look_up_cve:
-  id: 'Look Up CVE'
-  description: 'Get CVE information from circl.lu'
-  app_integration: CVESearch
-  input_schema: 'schemas/task_schemas/look_up_cve.json'
