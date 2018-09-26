@@ -233,3 +233,9 @@ ha_sandbox_reports:
   input_schema: 'schemas/task_schemas/ha_sandbox_reports.json'
   disabled: false
 
+unshorten_url:
+  id: 'Unshorten URL'
+  description: "Computes the full URL behind a short URL (like https://bit.ly/2N4mlZU)"
+  app_integration: UnshortenURL
+  input_schema: 'schemas/task_schemas/unshorten_url.json'
+  disabled: false

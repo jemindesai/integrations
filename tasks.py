@@ -11,6 +11,7 @@ from google_safe_browsing import *
 from hybrid_analysis import *
 from macvendors_integration import MacVendors
 from cvesearch_integration import CVESearch
+from unshorten_url_integration import UnshortenURL
 
 def abuse_ipdb_check_ip(d):
 
@@ -254,3 +255,9 @@ def look_up_cve(d):
 	return cve_search.look_up_cve(d)
 
 look_up_cve.id = 'Look Up CVE'
+
+def unshorten_url(d):
+	unshorten_url_integration = UnshortenURL()
+	return unshorten_url_integration.unshorten_url(d)
+
+unshorten_url.id = 'Unshorten URL'
