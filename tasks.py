@@ -12,6 +12,7 @@ from hybrid_analysis import *
 from macvendors_integration import MacVendors
 from cvesearch_integration import CVESearch
 from unshorten_url_integration import UnshortenURL
+from openphish_integration import OpenPhish
 
 def abuse_ipdb_check_ip(d):
 
@@ -261,3 +262,9 @@ def unshorten_url(d):
 	return unshorten_url_integration.unshorten_url(d)
 
 unshorten_url.id = 'Unshorten URL'
+
+def openphish_check_url(d):
+	openphish_integration = OpenPhish()
+	return openphish_integration.check_url(d)
+
+openphish_check_url.id = 'OpenPhish Check URL'

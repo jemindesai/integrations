@@ -239,3 +239,10 @@ unshorten_url:
   app_integration: UnshortenURL
   input_schema: 'schemas/task_schemas/unshorten_url.json'
   disabled: false
+
+openphish_check_url:
+  id: 'OpenPhish Check URL'
+  description: 'Search known phishing URLs'
+  app_integration: OpenPhish
+  input_schema: 'schemas/task_schemas/openphish_check_url.json'
+  disabled: false

@@ -5,7 +5,7 @@ class AppIntegration:
     All app integrations for Orchestrator inherit from AppIntegration.
     """
     def __init__(self):
-        self.secrets = self.read_secrets('secrets.yml')
+        self.secrets = self.read_secrets('./secrets.yml')
 
     def read_secrets(self, filename):
         """
