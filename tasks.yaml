@@ -246,3 +246,10 @@ openphish_check_url:
   app_integration: OpenPhish
   input_schema: 'schemas/task_schemas/openphish_check_url.json'
   disabled: false
+
+okta_list_users:
+  id: "List Okta Users"
+  description: "Lists all users in Okta, regardless of status"
+  app_integration: Okta
+  input_schema: 'schemas/task_schemas/okta_list_users.json'
+  disabled: false

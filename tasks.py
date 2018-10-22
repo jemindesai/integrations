@@ -13,6 +13,7 @@ from macvendors_integration import MacVendors
 from cvesearch_integration import CVESearch
 from unshorten_url_integration import UnshortenURL
 from openphish_integration import OpenPhish
+from okta_integration import Okta
 
 def abuse_ipdb_check_ip(d):
 
@@ -268,3 +269,9 @@ def openphish_check_url(d):
 	return openphish_integration.check_url(d)
 
 openphish_check_url.id = 'OpenPhish Check URL'
+
+def okta_list_users(d):
+	okta_integration = Okta()
+	return okta_integration.list_users(d)
+
+okta_list_users.id = 'List Okta Users'
