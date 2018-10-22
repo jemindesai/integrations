@@ -275,3 +275,21 @@ def okta_list_users(d):
 	return okta_integration.list_users(d)
 
 okta_list_users.id = 'List Okta Users'
+
+def okta_suspend_user(d):
+	okta_integration = Okta()
+	return okta_integration.suspend_user(d)
+
+okta_suspend_user.id = 'Suspend Okta User'
+
+def okta_unsuspend_user(d):
+	okta_integration = Okta()
+	return okta_integration.unsuspend_user(d)
+
+okta_unsuspend_user.id = 'Unsuspend Okta User'
+
+def okta_expire_password(d):
+	okta_integration = Okta()
+	return okta_integration.expire_password(d)
+
+okta_expire_password.id = "Expire Okta User's Password"

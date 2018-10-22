@@ -253,3 +253,24 @@ okta_list_users:
   app_integration: Okta
   input_schema: 'schemas/task_schemas/okta_list_users.json'
   disabled: true
+
+okta_suspend_user:
+  id: "Suspend Okta User"
+  description: "User to suspend must be ACTIVE"
+  app_integration: Okta
+  input_schema: 'schemas/task_schemas/okta_suspend_user.json'
+  disabled: true
+
+okta_unsuspend_user:
+  id: "Unsuspend Okta User"
+  description: "User to suspend must be SUSPENDED"
+  app_integration: Okta
+  input_schema: 'schemas/task_schemas/okta_unsuspend_user.json'
+  disabled: true
+
+okta_expire_password:
+  id: "Expire Okta User's Password"
+  description: "Forces user to change his password at next login"
+  app_integration: Okta
+  input_schema: 'schemas/task_schemas/okta_expire_password.json'
+  disabled: true

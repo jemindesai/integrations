@@ -1,0 +1,12 @@
+{
+    "type": "object",
+    "required": ["user_id"],
+    "properties": {
+        "user_id": {
+            "type": "string",
+            "format": "email",
+            "title": "User's Email Address",
+            "description": "Email address of the user to unsuspend"
+        }
+    }
+}

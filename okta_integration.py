@@ -39,7 +39,7 @@ class Okta(AppIntegration):
         }
         
         # We don't check that user is ACTIVE. We delegate that to Okta's API
-        return requests.post(suspend_endpoint, headers=headers)
+        return requests.post(suspend_endpoint, headers=headers).json()
 
     def unsuspend_user(self, d):
         """Dictionary D has a required key, `user_id`, the email address
@@ -57,7 +57,7 @@ class Okta(AppIntegration):
         }
         
         # We don't check that user is SUSPENDED. We delegate that to Okta's API
-        return requests.post(unsuspend_endpoint, headers=headers)
+        return requests.post(unsuspend_endpoint, headers=headers).json()
 
     def expire_password(self, d):
         """Dictionary D has a required key, `user_id`, the email address
@@ -75,4 +75,4 @@ class Okta(AppIntegration):
             'authorization': "SSWS %s" % self.api_key
         }
         
-        return requests.post(expire_password_endpoint, headers=headers)
+        return requests.post(expire_password_endpoint, headers=headers).json()
