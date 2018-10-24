@@ -43,3 +43,30 @@ class XFE(AppIntegration):
             'Accept': 'application/json',
             'Authorization': 'Basic %s' % self.token.decode()
         }).json()
+
+    def lookup_url(self, d):
+        """Dictionary d has required key, `url`."""
+        try:
+            url = d['url']
+        except KeyError:
+            return { 'status': 'Error', 'error_message': 'Key url is required'} 
+        
+        return requests.get("https://api.xforce.ibmcloud.com/url/%s" % url, headers={
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Basic %s' % self.token.decode()
+        }).json()
+
+    def get_whois(self, d):
+        """Dictionary d has required key, `host`. This is either an IP or
+        domain."""
+        try:
+            host = d['host']
+        except KeyError:
+            return { 'status': 'Error', 'error_message': 'Key host is required'} 
+        
+        return requests.get("https://api.xforce.ibmcloud.com/whois/%s" % host, headers={
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Basic %s' % self.token.decode()
+        }).json()
