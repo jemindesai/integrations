@@ -57,6 +57,19 @@ class XFE(AppIntegration):
             'Authorization': 'Basic %s' % self.token.decode()
         }).json()
 
+    def get_malware_for_url(self, d):
+        """Dictionary d has required key, `url`."""
+        try:
+            url = d['url']
+        except KeyError:
+            return { 'status': 'Error', 'error_message': 'Key url is required'} 
+        
+        return requests.get("https://api.xforce.ibmcloud.com/url/malware/%s" % url, headers={
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Basic %s' % self.token.decode()
+        }).json()
+
     def get_whois(self, d):
         """Dictionary d has required key, `host`. This is either an IP or
         domain."""
