@@ -274,3 +274,45 @@ okta_expire_password:
   app_integration: Okta
   input_schema: 'schemas/task_schemas/okta_expire_password.json'
   disabled: true
+
+xfe_lookup_ip:
+  id: "XForce Lookup IP"
+  description: "Retrieves IP report from IBM XForce Exchange"
+  app_integration: "XFE"
+  input_schema: 'schemas/task_schemas/xfe_lookup_ip.json'
+  disabled: false
+
+xfe_lookup_hash:
+  id: "XForce Lookup Hash"
+  description: "Retrieves report of MD5, SHA1, or SHA256 hash from IBM XForce Exchange"
+  app_integration: "XFE"
+  input_schema: 'schemas/task_schemas/xfe_lookup_hash.json'
+  disabled: false
+
+xfe_lookup_url:
+  id: "XForce Lookup URL"
+  description: "Retrieves URL report from IBM XForce Exchange"
+  app_integration: "XFE"
+  input_schema: 'schemas/task_schemas/xfe_lookup_url.json'
+  disabled: false
+
+xfe_get_whois:
+  id: "XForce Get WhoIs"
+  description: "Retrieves the WhoIs records of an domain or IP from IBM XForce Exchange"
+  app_integration: "XFE"
+  input_schema: 'schemas/task_schemas/xfe_get_whois.json'
+  disabled: false
+
+xfe_list_networks_for_asn:
+  id: "XForce List Networks in ASN"
+  description: "Lists CIDR ranges an ASN owns, given an ASN code (eg, ASN5387)"
+  app_integration: "XFE"
+  input_schema: 'schemas/task_schemas/xfe_list_networks_for_asn.json'
+  disabled: false
+
+xfe_get_dns_records:
+  id: "XForce Get DNS Records"
+  description: "Get both the passive and active DNS records of a domain or IP"
+  app_integration: "XFE"
+  input_schema: 'schemas/task_schemas/xfe_get_dns_records.json'
+  disabled: false

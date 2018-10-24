@@ -94,7 +94,7 @@ class XFE(AppIntegration):
         }).json()
 
     def get_dns_records(self, d):
-        """Dictionary d has required key, `host`, a domain, url, or IP. Returns
+        """Dictionary d has required key, `host`, a domain or IP. Returns
         both passive and active DNS records."""
         try:
             host = d['host']

@@ -1,0 +1,15 @@
+{
+	"type": "object",
+	"required": ["host"],
+	"properties": {
+		"host": {
+            "type": "string",
+            "title": "Domain or IP",
+            "anyOf": [
+                {"format": "ipv4"},
+                {"format": "ipv6"},
+                {"format": "hostname"}
+            ]
+        }
+	}
+}

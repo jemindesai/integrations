@@ -14,6 +14,7 @@ from cvesearch_integration import CVESearch
 from unshorten_url_integration import UnshortenURL
 from openphish_integration import OpenPhish
 from okta_integration import Okta
+from xfe_integration import XFE
 
 def abuse_ipdb_check_ip(d):
 
@@ -293,3 +294,39 @@ def okta_expire_password(d):
 	return okta_integration.expire_password(d)
 
 okta_expire_password.id = "Expire Okta User's Password"
+
+def xfe_lookup_ip(d):
+	xfe = XFE()
+	return xfe.lookup_ip(d)
+
+xfe_lookup_ip.id = 'XForce Lookup IP'
+
+def xfe_lookup_hash(d):
+	xfe = XFE()
+	return xfe.lookup_hash(d)
+
+xfe_lookup_hash.id = 'XForce Lookup Hash'
+
+def xfe_lookup_url(d):
+	xfe = XFE()
+	return xfe.lookup_url(d)
+
+xfe_lookup_url.id = 'XForce Lookup URL'
+
+def xfe_get_whois(d):
+	xfe = XFE()
+	return xfe.get_whois(d)
+
+xfe_get_whois.id = 'XForce Get WhoIs'
+
+def xfe_list_networks_for_asn(d):
+	xfe = XFE()
+	return xfe.list_networks_for_asn(d)
+
+xfe_list_networks_for_asn.id = 'XForce List Networks in ASN'
+
+def xfe_get_dns_records(d):
+	xfe = XFE()
+	return xfe.get_dns_records(d)
+
+xfe_get_dns_records.id = 'XForce Get DNS Records'

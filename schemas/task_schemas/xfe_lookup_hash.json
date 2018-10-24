@@ -1,0 +1,7 @@
+{
+	"type": "object",
+	"required": ["hash"],
+	"properties": {
+		"hash": {"type": "string", "title": "Hash (MD5, SHA1, SHA256)"}
+	}
+}
