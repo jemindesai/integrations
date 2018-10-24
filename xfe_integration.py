@@ -96,3 +96,17 @@ class XFE(AppIntegration):
             'Accept': 'application/json',
             'Authorization': 'Basic %s' % self.token.decode()
         }).json()
+
+    def get_dns_records(self, d):
+        """Dictionary d has required key, `host`, a domain, url, or IP. Returns
+        both passive and active DNS records."""
+        try:
+            host = d['host']
+        except KeyError:
+            return { 'status': 'Error', 'error_message': 'Key host is required'} 
+        
+        return requests.get("https://api.xforce.ibmcloud.com/resolve/%s" % host, headers={
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Basic %s' % self.token.decode()
+        }).json()
