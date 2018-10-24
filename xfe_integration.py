@@ -80,7 +80,7 @@ class XFE(AppIntegration):
             'Authorization': 'Basic %s' % self.token.decode()
         }).json()
 
-    def get_networks_for_asns(self, d):
+    def list_networks_for_asn(self, d):
         """Dictionary d has required key, `asn`, an ASN code like `ASN5387`."""
         try:
             asn = d['asn']
