@@ -83,3 +83,16 @@ class XFE(AppIntegration):
             'Accept': 'application/json',
             'Authorization': 'Basic %s' % self.token.decode()
         }).json()
+
+    def get_networks_for_asns(self, d):
+        """Dictionary d has required key, `asn`, an ASN code like `ASN5387`."""
+        try:
+            asn = d['asn']
+        except KeyError:
+            return { 'status': 'Error', 'error_message': 'Key asn is required'} 
+        
+        return requests.get("https://api.xforce.ibmcloud.com/ipr/asn/%s" % asn, headers={
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+            'Authorization': 'Basic %s' % self.token.decode()
+        }).json()
