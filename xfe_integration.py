@@ -2,10 +2,6 @@ from appintegration import AppIntegration
 import requests
 import base64
 
-# TODO: get `lookup_ip` to work
-# TODO: get `lookup_hash` to work
-# TODO: remove print from `lookup_hash`
-
 # Stands for IBM XForce Exchange
 class XFE(AppIntegration):
     def __init__(self):
