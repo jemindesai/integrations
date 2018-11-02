@@ -41,14 +41,14 @@ get_otx_pulse_details:
   description: 'Gets the details of the pulse corresponding to the given pulse ID.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/task_schemas/get_otx_pulse_details.json'
-  disabled: false
+  disabled: true
 
 get_otx_pulse_indicators:
   id: 'Get OTX Pulse Indicators'
   description: 'Get the indicators of the pulse corresponding to the given pulse ID.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/task_schemas/get_otx_pulse_indicators.json'
-  disabled: false
+  disabled: true
 
 get_otx_indicator_details:
   id: 'Get OTX Indicator Details'
@@ -62,7 +62,7 @@ create_otx_pulse:
   description: 'Creates a pulse on OTX.'
   app_integration: 'AlienVault OTX'
   input_schema: 'schemas/task_schemas/create_otx_pulse.json'
-  disabled: false
+  disabled: true
 
 search_otx_pulses:
   id: 'Search OTX Pulses'
@@ -111,7 +111,7 @@ send_email:
   description: 'Send an email.'
   app_integration: 'SendGrid'
   input_schema: 'schemas/task_schemas/send_email.json'
-  disabled: false
+  disabled: true
 
 shodan_lookup_host:
   id: 'Shodan Lookup Host'
